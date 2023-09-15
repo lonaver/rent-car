@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import ButtonFavorite from 'components/buttonFavorite/buttonFavorite';
 import {  carsFavoriteLS } from '../../constants/constants';
 
-const GalleryItem = ({car}) => {
+const GalleryItem = ({ car, onChangeFavorites}) => {
   const {
     id,
     make,
@@ -35,14 +35,13 @@ const GalleryItem = ({car}) => {
       closeModal();
     }
   };
-    useEffect(() => {
-      const handleKeyDown = e => {
-        if (e.code === 'Escape') closeModal();
-      };
-      window.addEventListener('keydown', handleKeyDown);
-      return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
-
+  useEffect(() => {
+    const handleKeyDown = e => {
+      if (e.code === 'Escape') closeModal();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const handleFavorite = async idCar => {
     const savedFavorites =
@@ -54,9 +53,11 @@ const GalleryItem = ({car}) => {
       const newFavorites = [...savedFavorites, newCar];
 
       localStorage.setItem(carsFavoriteLS, JSON.stringify(newFavorites));
+      onChangeFavorites(newFavorites);
     } else {
       const updatedFavorites = savedFavorites.filter(car => car.id !== idCar);
       localStorage.setItem(carsFavoriteLS, JSON.stringify(updatedFavorites));
+      onChangeFavorites(updatedFavorites);
     }
     setFavorite(!isFavorite);
   };
@@ -73,7 +74,6 @@ const GalleryItem = ({car}) => {
   const town = arrayAddress[arrayAddress.length - 1];
   const country = arrayAddress[arrayAddress.length - 2];
   const funcTwoWords = functionalities[0].split(' ')[0];
-  
 
   return (
     <li key={id} className={styles.card_car}>
@@ -106,7 +106,9 @@ const GalleryItem = ({car}) => {
       <button type="button" onClick={openModal} className={styles.button_card}>
         Learn more
       </button>
-      {showModal && <Modal key={id} onClose={handleBackDropClick} carCard={car}></Modal>}
+      {showModal && (
+        <Modal key={id} onClose={handleBackDropClick} carCard={car}></Modal>
+      )}
     </li>
   );
 };

@@ -18,6 +18,10 @@ const FavoritePage = () => {
     setFavoriteCars(savedFavorites);
   }, []);
 
+  const changeFavoritsCar = (data) => {
+    setFavoriteCars(data);
+  }
+
   const onSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -81,7 +85,10 @@ const FavoritePage = () => {
         priceFilter={priceFilter}
       ></Form>
       {favoriteCars.length > 0 ? (
-        <CarsGallery arrayCars={favoriteCars}></CarsGallery>
+        <CarsGallery
+          arrayCars={favoriteCars}
+          onChangeFavorites={changeFavoritsCar}
+        ></CarsGallery>
       ) : (
         <h2 className={styles.not_found}>You don`t have favorites car</h2>
       )}

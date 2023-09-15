@@ -45,7 +45,6 @@ const Modal = ({ carCard, onClose }) => {
           />
         </button>
         <div className={styles.card_car}>
-          <div className={styles.wrap_button_fav}></div>
           <div className={styles.container_img}>
             <img src={img} alt={model} />
           </div>
