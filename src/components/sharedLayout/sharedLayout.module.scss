@@ -1,0 +1,38 @@
+@import '../../styles/main.scss';
+.container{
+  align-items: center;
+}
+.header{
+  padding: 8px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px solid black;
+  padding-left:128px;
+  padding-right:128px;
+
+}
+.header_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 12px;
+  padding-left:128px;
+  padding-right:128px;
+}
+
+.nav_link{
+  padding: 8px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--main-text-color);
+  font-weight: 500;
+ 
+}
+ .active {
+   padding: 8px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: var( --main-button-color);
+  color: var(--main-bg-color);
+ }

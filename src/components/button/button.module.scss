@@ -1,0 +1,31 @@
+@import '../../styles/main.scss';
+.button {
+  margin-top: 20px;
+  margin-bottom: 120px;
+  color: var(--main-button-color);
+  font-family: inherit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  text-decoration-line: underline;
+  transition: var(--transition-btn);
+  text-align: center;
+  display: inline-block;
+  border: 0;
+  border-color: inherit;
+  background-color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+    transition: var( --transition-btn);
+
+&:hover,
+&:focus {
+  padding: 12px 50px;
+  background-color: var(--accent-btn-color);
+  border-radius: 12px;
+  color: var(--main-bg-color);
+  transition: var( --transition-btn);
+}
+}
+

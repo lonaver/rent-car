@@ -1,0 +1,27 @@
+@import '../../styles/main.scss';
+.link {
+    margin-top: 28px;
+    margin-right: auto;
+    display: inline-flex;
+    padding: 12px 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: var(--main-button-color);
+    color: var(--main-bg-color);
+    font-family: inherite;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: calc(20px/14px); /* 142.857% */
+    border-color: inherit;
+    cursor: pointer;
+    transition: var( --transition-btn);
+
+    &:hover,
+    &:focus {
+    background-color: var(--accent-btn-color);
+    transition: var( --transition-btn);
+    }
+}
+

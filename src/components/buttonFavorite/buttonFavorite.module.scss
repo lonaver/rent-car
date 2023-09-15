@@ -1,0 +1,34 @@
+@import '../../styles/main.scss';
+.btn_favorite {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  color: var(--main-bg-color);
+  background: transparent;
+  border-color: none;
+  border: none;
+  cursor: pointer;
+  transition: var( --transition-btn);
+  &:hover
+   {
+    color: var(--main-button-color);
+    transition: var( --transition-btn);
+  }
+}
+.btn_favorite_active {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  color: var(--main-button-color);
+  background: transparent;
+  border-color: none;
+  border: none;
+  cursor: pointer;
+  transition: var( --transition-btn);
+
+  &:hover
+   {
+    color: var(--main-button-color);
+    transition: var( --transition-btn);
+  }
+}
