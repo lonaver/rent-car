@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/rent-car/static/css/main.6f60f17e.css",
+    "main.js": "/rent-car/static/js/main.2c65c39d.js",
+    "static/css/731.f4b4231d.chunk.css": "/rent-car/static/css/731.f4b4231d.chunk.css",
+    "static/js/731.3d9a63db.chunk.js": "/rent-car/static/js/731.3d9a63db.chunk.js",
+    "static/css/251.d2a8d06a.chunk.css": "/rent-car/static/css/251.d2a8d06a.chunk.css",
+    "static/js/251.ff0406ca.chunk.js": "/rent-car/static/js/251.ff0406ca.chunk.js",
+    "static/css/69.2011f591.chunk.css": "/rent-car/static/css/69.2011f591.chunk.css",
+    "static/js/69.2bc30970.chunk.js": "/rent-car/static/js/69.2bc30970.chunk.js",
+    "static/js/134.921e91cc.chunk.js": "/rent-car/static/js/134.921e91cc.chunk.js",
+    "static/js/650.f09c5e82.chunk.js": "/rent-car/static/js/650.f09c5e82.chunk.js",
+    "static/css/28.58a5f875.chunk.css": "/rent-car/static/css/28.58a5f875.chunk.css",
+    "static/media/bubbles4.svg": "/rent-car/static/media/bubbles4.9edf28a2eb9b2eb0661d.svg",
+    "index.html": "/rent-car/index.html",
+    "static/media/close.svg": "/rent-car/static/media/close.deb20e5da737e93121346cb3855e8f21.svg",
+    "main.6f60f17e.css.map": "/rent-car/static/css/main.6f60f17e.css.map",
+    "main.2c65c39d.js.map": "/rent-car/static/js/main.2c65c39d.js.map",
+    "731.f4b4231d.chunk.css.map": "/rent-car/static/css/731.f4b4231d.chunk.css.map",
+    "731.3d9a63db.chunk.js.map": "/rent-car/static/js/731.3d9a63db.chunk.js.map",
+    "251.d2a8d06a.chunk.css.map": "/rent-car/static/css/251.d2a8d06a.chunk.css.map",
+    "251.ff0406ca.chunk.js.map": "/rent-car/static/js/251.ff0406ca.chunk.js.map",
+    "69.2011f591.chunk.css.map": "/rent-car/static/css/69.2011f591.chunk.css.map",
+    "69.2bc30970.chunk.js.map": "/rent-car/static/js/69.2bc30970.chunk.js.map",
+    "134.921e91cc.chunk.js.map": "/rent-car/static/js/134.921e91cc.chunk.js.map",
+    "650.f09c5e82.chunk.js.map": "/rent-car/static/js/650.f09c5e82.chunk.js.map",
+    "28.58a5f875.chunk.css.map": "/rent-car/static/css/28.58a5f875.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f60f17e.css",
+    "static/js/main.2c65c39d.js"
+  ]
+}
