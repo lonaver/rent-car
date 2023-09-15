@@ -3,6 +3,7 @@ import CarsGallery from 'components/carsGallery/carsGallery';
 import { priceFilter, carsFavoriteLS } from '../../constants/constants';
 import brandCar from '../../makes.json';
 import Form from 'components/form/form';
+import toast, { Toaster } from 'react-hot-toast';
 
 import styles from './FavoritePage.module.scss';
 
@@ -30,6 +31,16 @@ const FavoritePage = () => {
         JSON.parse(localStorage.getItem(carsFavoriteLS)) || [];
       setFavoriteCars(savedFavorites);
       return;
+    }
+    if (Number(milageStartV) > 0 && Number(milageEndV) > 0) {
+      if (Number(milageStartV) > Number(milageEndV)) {
+        toast.error('value FROM < then value TO');
+        const savedFavorites =
+        JSON.parse(localStorage.getItem(carsFavoriteLS)) || [];
+        setFavoriteCars(savedFavorites);
+
+        return;
+      }
     }
 
     if (brandV) visibleCar = visibleCar.filter(el => el.make === brandV);
@@ -61,6 +72,9 @@ const FavoritePage = () => {
 
   return (
     <div className={styles.car_container}>
+      <div>
+        <Toaster />
+      </div>
       <Form
         onSubmit={onSubmit}
         brandCar={brandCar}
@@ -69,7 +83,7 @@ const FavoritePage = () => {
       {favoriteCars.length > 0 ? (
         <CarsGallery arrayCars={favoriteCars}></CarsGallery>
       ) : (
-        <h2>You don`t have favorites car</h2>
+        <h2 className={styles.not_found}>You don`t have favorites car</h2>
       )}
     </div>
   );

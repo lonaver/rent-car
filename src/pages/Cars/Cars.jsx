@@ -9,6 +9,7 @@ import Form from 'components/form/form';
 import { priceFilter } from '../../constants/constants';
 import brandCar from '../../makes.json';
 import styles from './Cars.module.scss';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Cars = () => {
   const [numberPage, setNumberPage] = useState(1);
@@ -19,11 +20,11 @@ const Cars = () => {
 
   useEffect(() => {
     dispatch(fetchCars());
-    setVisibleItems(items.slice(0, 7));
-    setDataCars(items);
-  }, [dispatch, items]);
+  }, [dispatch]);
+
 
   useEffect(() => {
+    setDataCars(items);
     setVisibleItems(items.slice(0, numberPage * 8));
   }, [numberPage, items]);
 
@@ -45,7 +46,15 @@ const Cars = () => {
 
       return;
     }
+    if (Number(milageStartV) > 0 && Number(milageEndV) > 0) {
+      if (Number(milageStartV) > Number(milageEndV)) {
+        toast.error("value FROM < then value TO");
+        setVisibleItems(visibleCar.slice(0, 7));
+        setDataCars(visibleCar);
 
+        return;
+      }
+    }
     if (brandV) visibleCar = visibleCar.filter(el => el.make === brandV);
     if (Number(priceHourV) > 0) {
       visibleCar = visibleCar.filter(
@@ -64,6 +73,7 @@ const Cars = () => {
     }
 
     if (Number(milageStartV) > 0 && Number(milageEndV) > 0) {
+      if (Number(milageStartV) > Number(milageEndV)) toast.error("value FROM < then value TO");
       visibleCar = visibleCar.filter(
         el =>
           Number(el.mileage) >= Number(milageStartV) &&
@@ -74,16 +84,20 @@ const Cars = () => {
     setDataCars(visibleCar);
   };
   const isAddMore = dataCars.length > visibleItems.length && !isLoading;
+  const isEmpty = visibleItems.length===0 && !isLoading;
 
   return (
     <div className={styles.car_container}>
+      <div>
+        <Toaster />
+      </div>
       <Form
         onSubmit={onSubmit}
         brandCar={brandCar}
         priceFilter={priceFilter}
       ></Form>
       {isLoading && <Loader></Loader>}
-      {!isLoading && <CarsGallery arrayCars={visibleItems}></CarsGallery>}
+      {isEmpty ?<h2 className={styles.not_found}>Nothing found...</h2> : <CarsGallery arrayCars={visibleItems}></CarsGallery>}
       {isAddMore && <Button title={'Load more'} onClick={onAddMore}></Button>}
     </div>
   );

@@ -4,7 +4,7 @@ import styles from './form.module.scss';
 const Form = ({ onSubmit, brandCar, priceFilter }) => {
     return (
       <>
-        <form onSubmit={onSubmit}>
+        <form autoComplete="off" onSubmit={onSubmit}>
           <div className={styles.form_wrapper}>
             <label className={styles.label}>
               Car brand
@@ -47,7 +47,9 @@ const Form = ({ onSubmit, brandCar, priceFilter }) => {
                 <input
                   className={styles.input_start}
                   htmlFor="input_start"
-                  type="text"
+                  type="number"
+                  min="0"
+                  max="999999"
                   autoComplete="off"
                   placeholder="From"
                   name="milageStart"
@@ -58,7 +60,9 @@ const Form = ({ onSubmit, brandCar, priceFilter }) => {
                 <input
                   className={styles.input_end}
                   htmlFor="input_end"
-                  type="text"
+                  type="number"
+                  min="0"
+                  max="999999"
                   autoComplete="off"
                   placeholder="To"
                   name="milageEnd"

@@ -6,7 +6,7 @@ const Home = () => {
   
   return (
     <div className={styles.container}>
-      <MainPageTitle title={'Rent car'}></MainPageTitle>
+      <MainPageTitle title={'Rent a car'}></MainPageTitle>
       <div className={styles.wrap}>
         <div className={styles.wrap_text}>
           <h2>Welcome to our website!</h2>
@@ -22,7 +22,7 @@ const Home = () => {
             dicta consequuntur labore maiores quibusdam cumque dolorem, quam
             libero esse quae quaerat in!
           </p>
-          <h2>Our servises:</h2>
+          <h2>Our services:</h2>
           <ul className={styles.wrap_list}>
             <li>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.

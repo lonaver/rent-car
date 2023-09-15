@@ -8,8 +8,8 @@ const Loader = () => {
     <div className={styles['loader-wrapper']}>
       <MagnifyingGlass
         visible={true}
-        height="120"
-        width="120"
+        height="80"
+        width="80"
         ariaLabel="MagnifyingGlass-loading"
         wrapperStyle={{}}
         wrapperClass="MagnifyingGlass-wrapper"
